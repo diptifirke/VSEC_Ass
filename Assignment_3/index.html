@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Marks Management</title>
+
+    <style>
+
+        
+
+        .box{
+            width:600px;
+            margin:100px;
+            padding:20px;
+            border:1px solid black;
+        }
+
+        input{
+            width:250px;
+            margin-bottom:10px;
+        }
+
+        button{
+            margin-top:10px;
+        }
+
+        table{
+            width:100%;
+            margin-top:20px;
+            border-collapse:collapse;
+        }
+
+        table,th,td{
+            border:1px solid black;
+            text-align:center;
+            padding:8px;
+        }
+
+        h2,h3{
+            text-align:center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Student Marks Management</h2>
+
+<label>Student Name</label><br>
+<input type="text" id="name"><br>
+
+<label>Physics Marks</label><br>
+<input type="number" id="physics"><br>
+
+<label>Chemistry Marks</label><br>
+<input type="number" id="chemistry"><br>
+
+<label>Maths Marks</label><br>
+<input type="number" id="maths"><br>
+
+<button onclick="addStudent()">
+Add Student
+</button>
+
+<h3>Student Record</h3>
+
+<table>
+
+<tr>
+
+<th>Name</th>
+<th>Physics</th>
+<th>Chemistry</th>
+<th>Maths</th>
+<th>Total</th>
+<th>Percentage</th>
+
+</tr>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
+
+<h3 id="topper"></h3>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Project</title>
+
+    <style>
+
+
+        .box{
+            width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td{
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+        input{
+            width: 95%;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2 align="center">Student Marks Calculator</h2>
+
+Student Name<br>
+<input type="text" id="name">
+
+Physics Marks<br>
+<input type="number" id="phy">
+
+Chemistry Marks<br>
+<input type="number" id="chem">
+
+Mathematics Marks<br>
+<input type="number" id="math">
+
+<button onclick="calculate()">Add Student</button>
+
+<table id="table">
+
+<tr>
+<th>Name</th>
+<th>Physics</th>
+<th>Chemistry</th>
+<th>Mathematics</th>
+<th>Total</th>
+<th>Percentage</th>
+</tr>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

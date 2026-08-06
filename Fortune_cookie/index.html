@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Fortune Cookie</title>
+
+    <style>
+
+        body{
+            background-color: lightyellow;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .box{
+            width: 400px;
+            margin: 100px;
+            margin-top: 50px;
+            background-color: white;
+            border: 2px solid brown;
+            padding: 20px;
+        }
+
+        #cookie{
+            font-size: 200px;
+            cursor: pointer;
+        }
+
+        h3{
+            color: brown;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>🥠 Fortune Cookie</h2>
+
+    <p>Click the cookie to see your fortune</p>
+
+    <div id="cookie" onclick="openCookie()">
+        🥠
+    </div>
+
+    <h3 id="message"></h3>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
