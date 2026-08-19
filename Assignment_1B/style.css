@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+.message {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    text-align: center;
+
+    z-index: 1;
+}
+.square {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 2;
+
+    transition: transform 1.5s ease-in-out;
+}
+.square1 {
+    background-color: #3498db;
+    top: 0;
+    left: 0;
+}
+.square2 {
+    background-color: #e74c3c;
+    top: 0;
+    right: 0;
+}
+.square3 {
+    background-color: #f1c40f;
+    bottom: 0;
+    left: 0;
+}
+.square4 {
+    background-color: #2ecc71;
+    bottom: 0;
+    right: 0;
+}
+.container:hover .square1 {
+    transform: translateX(-200px) rotate(-360deg);
+}
+.container:hover .square3 {
+    transform: translateX(-200px) rotate(360deg);
+}
+.container:hover .square2 {
+    transform: translateX(200px) rotate(360deg);
+}
+.container:hover .square4 {
+    transform: translateX(200px) rotate(-360deg);
+}

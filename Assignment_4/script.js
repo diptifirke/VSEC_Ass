@@ -26,6 +26,7 @@ function sunny(){
 
 }
 
+
 function rainy(){
 
     clearWeather();

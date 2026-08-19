@@ -69,9 +69,6 @@ button{
 }
 
 .drop{
-    width:2px;
-    height:20px;
-    background:white;
     position:absolute;
     top:-20px;
     animation:rainFall 1s linear infinite;
