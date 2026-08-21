@@ -54,14 +54,14 @@ body {
     right: 0;
 }
 .container:hover .square1 {
-    transform: translateX(-200px) rotate(-360deg);
-}
-.container:hover .square3 {
-    transform: translateX(-200px) rotate(360deg);
+    transform: translateX(-200px) rotate(-180deg);
 }
 .container:hover .square2 {
-    transform: translateX(200px) rotate(360deg);
+    transform: translateX(200px) rotate(180deg);
+}
+.container:hover .square3 {
+    transform: translateX(-200px) rotate(180deg);
 }
 .container:hover .square4 {
-    transform: translateX(200px) rotate(-360deg);
+    transform: translateX(200px) rotate(-180deg);
 }
