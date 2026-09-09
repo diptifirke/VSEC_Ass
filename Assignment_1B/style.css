@@ -1,67 +1,56 @@
 body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+    background: #FFF0F1;
+    text-align: center;
+    font-family: Arial;
 }
-.container {
-    width: 400px;
-    height: 400px;
+.boxarea {
+    width: 240px;
+    height: 240px;
+    margin: 200px auto;
     position: relative;
 }
-.message {
-    width: 400px;
-    height: 400px;
+.name {
     position: absolute;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: white;
-    text-align: center;
-
-    z-index: 1;
+    top: 100px;
+    left: 70px;
+    font-size: 25px;
+    font-weight: bold;
 }
-.square {
-    width: 200px;
-    height: 200px;
+.left {
     position: absolute;
-    z-index: 2;
-
-    transition: transform 1.5s ease-in-out;
-}
-.square1 {
-    background-color: #3498db;
-    top: 0;
     left: 0;
-}
-.square2 {
-    background-color: #e74c3c;
     top: 0;
+    transition: 1s;
+}
+.right {
+    position: absolute;
     right: 0;
+    top: 0;
+    transition: 1s;
 }
-.square3 {
-    background-color: #f1c40f;
-    bottom: 0;
-    left: 0;
+.box {
+    width: 120px;
+    height: 120px;
+    transition: 1s;
 }
-.square4 {
-    background-color: #2ecc71;
-    bottom: 0;
-    right: 0;
+.pink {
+    background: #FFA5D6;
 }
-.container:hover .square1 {
-    transform: translateX(-200px) rotate(-180deg);
+.lightpink {
+    background: #FFD6EE;
 }
-.container:hover .square2 {
-    transform: translateX(200px) rotate(180deg);
+.lavender {
+    background: #CED1F8;
 }
-.container:hover .square3 {
-    transform: translateX(-200px) rotate(180deg);
+.mauve {
+    background: #ECD2E0;
 }
-.container:hover .square4 {
-    transform: translateX(200px) rotate(-180deg);
+.boxarea:hover .left {
+    transform: translateX(-180px);
+}
+.boxarea:hover .right {
+    transform: translateX(180px);
+}
+.boxarea:hover .box {
+    transform: rotate(90deg);
 }
