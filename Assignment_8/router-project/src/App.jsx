@@ -12,22 +12,12 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <Input
-              setName={setName}
-              setCity={setCity}
-            />
-          }
+          element={<Input setName={setName} setCity={setCity} />}
         />
 
         <Route
           path="/display"
-          element={
-            <Display
-              name={name}
-              city={city}
-            />
-          }
+          element={<Display name={name} city={city} />}
         />
       </Routes>
     </BrowserRouter>

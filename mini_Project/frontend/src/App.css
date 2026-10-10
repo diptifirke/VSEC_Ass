@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4ff;
+  color: #22223b;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #28245f, #6c63ff);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.header p {
+  margin-bottom: 0;
+  color: #e2e0ff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.form-card,
+.booking-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px #25245f15;
+}
+
+h2 {
+  margin-top: 0;
+  color: #38327a;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d5d6e8;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #8b83ff;
+  border-color: #6c63ff;
+}
+
+button {
+  border: none;
+  background: #6258e8;
+  color: white;
+  padding: 11px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+button:hover {
+  background: #453bbd;
+}
+
+.cancel-btn {
+  background: #777;
+}
+
+.delete-btn {
+  background: #e5484d;
+}
+
+.delete-btn:hover {
+  background: #b92d35;
+}
+
+.message {
+  padding: 10px;
+  background: #eeedff;
+  border-radius: 8px;
+  color: #38327a;
+}
+
+.booking-count {
+  color: #666;
+}
+
+.booking-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.booking-item {
+  border: 1px solid #e2e1f5;
+  border-radius: 12px;
+  padding: 15px;
+  background: #fafaff;
+}
+
+.booking-item h3 {
+  margin-top: 0;
+  color: #5146c8;
+}
+
+.booking-item p {
+  margin: 7px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  flex: 1;
+}
+
+@media (max-width: 750px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
