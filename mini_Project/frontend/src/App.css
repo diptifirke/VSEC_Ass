@@ -1,3 +1,6 @@
+
+/* GENERAL STYLING */
+
 * {
   box-sizing: border-box;
 }
@@ -12,6 +15,90 @@ body {
 .app {
   min-height: 100vh;
 }
+
+/* LOGIN PAGE */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #28245f, #6c63ff);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 35px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px #00000030;
+}
+
+.login-card h1 {
+  margin: 0;
+  text-align: center;
+  color: #38327a;
+  font-size: 32px;
+}
+
+.login-card > p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-card label {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d5d6e8;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.login-card input:focus {
+  outline: 2px solid #8b83ff;
+  border-color: #6c63ff;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #6258e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-card button:hover {
+  background: #453bbd;
+  transform: translateY(-2px);
+}
+
+.login-card .login-note {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* BOOKING PAGE HEADER */
 
 .header {
   background: linear-gradient(135deg, #28245f, #6c63ff);
@@ -30,6 +117,8 @@ body {
   color: #e2e0ff;
 }
 
+/* MAIN LAYOUT */
+
 .container {
   width: 90%;
   max-width: 1100px;
@@ -40,8 +129,11 @@ body {
   align-items: start;
 }
 
+/* FORM AND BOOKING CARDS */
+
 .form-card,
 .booking-card {
+  min-width: 0;
   background: white;
   padding: 25px;
   border-radius: 16px;
@@ -52,6 +144,8 @@ h2 {
   margin-top: 0;
   color: #38327a;
 }
+
+/* FORMS */
 
 form {
   display: flex;
@@ -80,6 +174,8 @@ select:focus {
   border-color: #6c63ff;
 }
 
+/* ALL BUTTONS */
+
 button {
   border: none;
   background: #6258e8;
@@ -89,14 +185,24 @@ button {
   cursor: pointer;
   font-size: 14px;
   margin-top: 8px;
+  transition: 0.3s;
 }
 
 button:hover {
   background: #453bbd;
 }
 
+button:focus-visible {
+  outline: 2px solid #28245f;
+  outline-offset: 3px;
+}
+
 .cancel-btn {
   background: #777;
+}
+
+.cancel-btn:hover {
+  background: #555;
 }
 
 .delete-btn {
@@ -107,16 +213,34 @@ button:hover {
   background: #b92d35;
 }
 
+/* LOGOUT BUTTON */
+
+.header button {
+  background: white;
+  color: #453bbd;
+  font-weight: bold;
+  padding: 10px 22px;
+}
+
+.header button:hover {
+  background: #e2e0ff;
+}
+
+/* MESSAGE */
+
 .message {
-  padding: 10px;
+  padding: 12px;
   background: #eeedff;
   border-radius: 8px;
   color: #38327a;
+  overflow-wrap: anywhere;
 }
 
 .booking-count {
   color: #666;
 }
+
+/* BOOKING LIST */
 
 .booking-list {
   display: grid;
@@ -125,10 +249,18 @@ button:hover {
 }
 
 .booking-item {
+  min-width: 0;
   border: 1px solid #e2e1f5;
   border-radius: 12px;
   padding: 15px;
   background: #fafaff;
+  transition: 0.3s;
+  overflow-wrap: anywhere;
+}
+
+.booking-item:hover {
+  box-shadow: 0 4px 12px #25245f15;
+  transform: translateY(-3px);
 }
 
 .booking-item h3 {
@@ -140,6 +272,8 @@ button:hover {
   margin: 7px 0;
 }
 
+/* EDIT AND DELETE BUTTONS */
+
 .actions {
   display: flex;
   gap: 8px;
@@ -149,8 +283,34 @@ button:hover {
   flex: 1;
 }
 
+/* TABLET AND MOBILE RESPONSIVENESS */
+
 @media (max-width: 750px) {
   .container {
     grid-template-columns: 1fr;
+    width: 92%;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .form-card,
+  .booking-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-card {
+    padding: 25px 20px;
+  }
+
+  .booking-list {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
   }
 }

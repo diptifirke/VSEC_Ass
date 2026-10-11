@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+
   const [name, setName] = useState("");
   const [room, setRoom] = useState("Room 1");
   const [seat, setSeat] = useState("");
@@ -11,11 +15,23 @@ function App() {
   const [editId, setEditId] = useState(null);
   const [message, setMessage] = useState("");
 
- const url = "http://localhost:5001/bookings";
+  const url = "http://localhost:5001/bookings";
+
+  const login = (e) => {
+    e.preventDefault();
+
+    if (username.trim() !== "" && password !== "") {
+      setLoggedIn(true);
+    }
+  };
 
   const getBookings = async () => {
     try {
       const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error("Cannot load bookings");
+      }
       const data = await response.json();
       setBookings(data);
     } catch (error) {
@@ -24,8 +40,10 @@ function App() {
   };
 
   useEffect(() => {
-    getBookings();
-  }, []);
+    if (loggedIn) {
+      getBookings();
+    }
+  }, [loggedIn]);
 
   const saveBooking = async (e) => {
     e.preventDefault();
@@ -81,6 +99,10 @@ function App() {
   };
 
   const deleteBooking = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this booking?")) {
+      return;
+    }
+
     try {
       const response = await fetch(url + "/" + id, {
         method: "DELETE"
@@ -107,11 +129,57 @@ function App() {
     setEditId(null);
   };
 
+  if (!loggedIn) {
+    return (
+      <div className="login-page">
+        <div className="login-card">
+          <h1>StudySpace</h1>
+          <p>Study Room Seat Booking System</p>
+
+          <form onSubmit={login}>
+            <label>Username</label>
+            <input
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+
+            <button type="submit">Login</button>
+          </form>
+
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="app">
       <header className="header">
         <h1>StudySpace</h1>
         <p>Book your perfect study seat</p>
+
+        <button
+          onClick={() => {
+            setLoggedIn(false);
+            setUsername("");
+            setPassword("");
+            setMessage("");
+            clearForm();
+          }}
+        >
+          Logout
+        </button>
       </header>
 
       <main className="container">
@@ -175,9 +243,7 @@ function App() {
             </button>
 
             {editId && (
-              <button type="button" className="cancel-btn" onClick={clearForm}>
-                Cancel Edit
-              </button>
+              <button type="button" className="cancel-btn" onClick={clearForm}>Cancel Edit</button>
             )}
           </form>
 
@@ -186,7 +252,9 @@ function App() {
 
         <section className="booking-card">
           <h2>All Bookings</h2>
-          <p className="booking-count">Total bookings: {bookings.length}</p>
+          <p className="booking-count">
+            Total bookings: {bookings.length}
+          </p>
 
           {bookings.length === 0 ? (
             <p>No bookings yet. Book your first seat!</p>
@@ -204,10 +272,8 @@ function App() {
                     <button onClick={() => editBooking(booking)}>
                       Edit
                     </button>
-                    <button
-                      className="delete-btn"
-                      onClick={() => deleteBooking(booking._id)}
-                    >
+
+                    <button className="delete-btn" onClick={() => deleteBooking(booking._id)}>
                       Delete
                     </button>
                   </div>
@@ -220,5 +286,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
