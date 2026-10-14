@@ -1,6 +1,4 @@
 
-/* GENERAL STYLING */
-
 * {
   box-sizing: border-box;
 }
@@ -8,309 +6,190 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f2f4ff;
-  color: #22223b;
+  background: #f3f4f8;
+  color: #333;
 }
 
 .app {
   min-height: 100vh;
 }
 
-/* LOGIN PAGE */
-
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #28245f, #6c63ff);
-}
-
-.login-card {
-  width: 100%;
-  max-width: 380px;
-  padding: 35px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px #00000030;
-}
-
-.login-card h1 {
-  margin: 0;
-  text-align: center;
-  color: #38327a;
-  font-size: 32px;
-}
-
-.login-card > p {
-  text-align: center;
-  color: #666;
-  margin-bottom: 25px;
-}
-
-.login-card form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.login-card label {
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-.login-card input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #d5d6e8;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.login-card input:focus {
-  outline: 2px solid #8b83ff;
-  border-color: #6c63ff;
-}
-
-.login-card button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: #6258e8;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.login-card button:hover {
-  background: #453bbd;
-  transform: translateY(-2px);
-}
-
-.login-card .login-note {
-  margin-top: 20px;
-  margin-bottom: 0;
-  font-size: 13px;
-  color: #777;
-}
-
-/* BOOKING PAGE HEADER */
-
 .header {
-  background: linear-gradient(135deg, #28245f, #6c63ff);
+  background: #5146a5;
   color: white;
   text-align: center;
-  padding: 30px 15px;
+  padding: 25px 15px;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 36px;
+  font-size: 34px;
 }
 
 .header p {
   margin-bottom: 0;
-  color: #e2e0ff;
+  font-size: 15px;
 }
-
-/* MAIN LAYOUT */
 
 .container {
-  width: 90%;
+  width: 95%;
   max-width: 1100px;
+  margin: 35px auto;
+}
+
+/* Login and student form */
+.form-card {
+  width: 100%;
+  max-width: 500px;
   margin: 30px auto;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 25px;
-  align-items: start;
-}
-
-/* FORM AND BOOKING CARDS */
-
-.form-card,
-.booking-card {
-  min-width: 0;
+  padding: 30px;
   background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 5px 20px #25245f15;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
 }
 
-h2 {
+.form-card h2,
+.booking-card h2 {
+  color: #5146a5;
   margin-top: 0;
-  color: #38327a;
-}
-
-/* FORMS */
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  margin-bottom: 22px;
 }
 
 label {
+  display: block;
+  margin: 16px 0 7px;
   font-weight: bold;
-  margin-top: 5px;
+  font-size: 14px;
 }
 
 input,
 select {
   width: 100%;
   padding: 12px;
-  border: 1px solid #d5d6e8;
-  border-radius: 8px;
-  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   background: white;
+  font-size: 15px;
 }
 
 input:focus,
 select:focus {
-  outline: 2px solid #8b83ff;
-  border-color: #6c63ff;
+  outline: none;
+  border-color: #5146a5;
 }
 
-/* ALL BUTTONS */
-
+/* Buttons */
 button {
-  border: none;
-  background: #6258e8;
-  color: white;
   padding: 11px 16px;
-  border-radius: 8px;
-  cursor: pointer;
+  margin-top: 16px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #5146a5;
+  color: white;
   font-size: 14px;
-  margin-top: 8px;
-  transition: 0.3s;
+  cursor: pointer;
 }
 
 button:hover {
-  background: #453bbd;
+  background: #393078;
 }
 
-button:focus-visible {
-  outline: 2px solid #28245f;
-  outline-offset: 3px;
-}
-
-.cancel-btn {
+.secondary-btn {
   background: #777;
 }
 
-.cancel-btn:hover {
+.secondary-btn:hover {
   background: #555;
 }
 
 .delete-btn {
-  background: #e5484d;
+  background: #dc4545;
 }
 
 .delete-btn:hover {
-  background: #b92d35;
+  background: #b52222;
 }
 
-/* LOGOUT BUTTON */
-
-.header button {
+/* Student table page */
+.booking-card {
+  padding: 30px;
   background: white;
-  color: #453bbd;
-  font-weight: bold;
-  padding: 10px 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
 }
 
-.header button:hover {
-  background: #e2e0ff;
+.top-buttons {
+  margin-bottom: 15px;
 }
 
-/* MESSAGE */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  background: white;
+}
+
+thead {
+  background: #5146a5;
+  color: white;
+}
+
+th,
+td {
+  padding: 13px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+  background: #f5f4fb;
+}
+
+tbody tr:hover {
+  background: #eeecfa;
+}
+
+td button {
+  margin: 3px;
+  white-space: nowrap;
+}
 
 .message {
-  padding: 12px;
-  background: #eeedff;
-  border-radius: 8px;
-  color: #38327a;
-  overflow-wrap: anywhere;
+  margin-top: 15px;
+  color: #5146a5;
+  font-weight: bold;
 }
 
-.booking-count {
+.empty-message {
+  padding: 15px 0;
   color: #666;
 }
 
-/* BOOKING LIST */
-
-.booking-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.booking-item {
-  min-width: 0;
-  border: 1px solid #e2e1f5;
-  border-radius: 12px;
-  padding: 15px;
-  background: #fafaff;
-  transition: 0.3s;
-  overflow-wrap: anywhere;
-}
-
-.booking-item:hover {
-  box-shadow: 0 4px 12px #25245f15;
-  transform: translateY(-3px);
-}
-
-.booking-item h3 {
-  margin-top: 0;
-  color: #5146c8;
-}
-
-.booking-item p {
-  margin: 7px 0;
-}
-
-/* EDIT AND DELETE BUTTONS */
-
-.actions {
-  display: flex;
-  gap: 8px;
-}
-
-.actions button {
-  flex: 1;
-}
-
-/* TABLET AND MOBILE RESPONSIVENESS */
-
-@media (max-width: 750px) {
-  .container {
-    grid-template-columns: 1fr;
-    width: 92%;
+/* Mobile layout */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 28px;
   }
 
-  .header h1 {
-    font-size: 30px;
+  .container {
+    width: 94%;
+    margin: 20px auto;
   }
 
   .form-card,
   .booking-card {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 400px) {
-  .login-card {
-    padding: 25px 20px;
-  }
-
-  .booking-list {
-    grid-template-columns: 1fr;
-  }
-
-  .actions {
-    flex-direction: column;
+    padding: 18px;
   }
 }
